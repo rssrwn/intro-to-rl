@@ -1,1 +1,2 @@
 ## Please list additional packages with version numbers
+gym[atari]==0.12.5
