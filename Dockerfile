@@ -1,7 +1,28 @@
-FROM jupyter/tensorflow-notebook
+FROM jupyter/tensorflow-notebook:d4cbf2f80a2a
 
 #Set the working directory
 WORKDIR /home/jovyan/
+
+USER root
+# Install system dependencies for gym[atari]
+# https://pypi.org/project/gym/0.7.4/#installation
+# libav-tools replaced with ffmpeg
+# xvfb, xserver-xephyr, vnc4server for pyvirtualdisplay
+RUN apt-get update && apt-get install -y \
+        python-numpy \
+        python-dev \
+        cmake \
+        zlib1g-dev \
+        libjpeg-dev \
+        xvfb \
+        ffmpeg \
+        xorg-dev \
+        python-opengl \
+        libboost-all-dev \
+        libsdl2-dev swig \
+        xserver-xephyr \
+        vnc4server && \
+    conda install -c conda-forge pyglet
 
 # Modules
 COPY requirements.txt /home/jovyan/requirements.txt
@@ -16,7 +37,7 @@ COPY solutions /home/jovyan/solutions
 USER root
 RUN chown -R $NB_USER /home/jovyan \
     && chmod -R 774 /home/jovyan \
-    && rm -fR /home/jovyan/work 
+    && rm -fR /home/jovyan/work
 USER $NB_USER
 
 # Expose the notebook port
