@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import copy 
 
-#Hyperparameters
+# Hyperparameters
 NUM_EPISODES = 1000
 LEARNING_RATE = 0.001
 GAMMA = 0.90
@@ -78,6 +78,7 @@ for e in range(NUM_EPISODES):
     # Append for logging and print
     episode_rewards.append(score) 
     print("EP: " + str(e) + " Score: " + str(score) + "         ",end="\r", flush=False) 
+    env.render()
 
 plt.plot(np.arange(NUM_EPISODES),episode_rewards)
 plt.show()
