@@ -1,3 +1,6 @@
+Project originally from: https://resources.oreilly.com/live-training/introduction-to-reinforcement-learning.git
+As part of introduction-to-reinforcement-learning course given by Leonardo De Marchi
+
 # ${Introduction to Reinforcement Learning}
 
 ![Powered by Jupyter Logo](https://cdn.oreillystatic.com/images/icons/powered_by_jupyter.png)
