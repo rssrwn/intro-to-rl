@@ -1,4 +1,5 @@
 Project originally from: https://resources.oreilly.com/live-training/introduction-to-reinforcement-learning.git
+
 As part of introduction-to-reinforcement-learning course given by Leonardo De Marchi
 
 # ${Introduction to Reinforcement Learning}
